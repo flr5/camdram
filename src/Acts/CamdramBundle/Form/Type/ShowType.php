@@ -58,13 +58,8 @@ class ShowType extends AbstractType
             ->add('online_booking_url', 'url', array(
                 'required' => false, 'label' => 'URL for purchasing tickets'
             ))
-            ->add('facebook_id', null, array('required' => false))
-            ->add('twitter_id', null, array(
-                'required' => false,
-                'label' => 'Twitter account',
-                'attr' => array(
-                    'placeholder' => 'TwitterUsername (no @)'
-            )))
+            ->add('facebook_id', 'facebook_link', array('required' => false))
+            ->add('twitter_id', 'twitter_link', array('required' => false))
             ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
                 //society's 'read-only' field is dependent on whether a new show is being created
                 $show = $event->getData();
