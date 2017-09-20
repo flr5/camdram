@@ -23,8 +23,8 @@ class VenueType extends AbstractType
             ->add('description')
             ->add('address')
             ->add('location', 'map_location')
-            ->add('facebook_id')
-            ->add('twitter_id')
+            ->add('facebook_id', 'facebook_link', array('required' => false))
+            ->add('twitter_id', 'twitter_link', array('required' => false))
         ;
     }
 
