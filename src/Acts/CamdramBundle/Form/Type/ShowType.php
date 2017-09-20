@@ -59,7 +59,12 @@ class ShowType extends AbstractType
                 'required' => false, 'label' => 'URL for purchasing tickets'
             ))
             ->add('facebook_id', null, array('required' => false))
-            ->add('twitter_id', null, array('required' => false))
+            ->add('twitter_id', null, array(
+                'required' => false,
+                'label' => 'Twitter account',
+                'attr' => array(
+                    'placeholder' => 'TwitterUsername (no @)'
+            )))
             ->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
                 //society's 'read-only' field is dependent on whether a new show is being created
                 $show = $event->getData();
